@@ -16,7 +16,7 @@ import { UserAccountComponent } from 'src/app/user-account/user-account.componen
 import { AppliedInternshipsComponent } from 'src/app/applied-internships/applied-internships.component';
 
 const routes: Routes = [
-//  { path: 'dashboard', component: DashboardComponent },
+ { path: 'dashboard', component: DashboardComponent },
   { path: 'placements', component: PlacementsComponent },
   { path: 'internships', component: InternshipsComponent },
   { path: 'competitions', component: CompetitionsComponent },

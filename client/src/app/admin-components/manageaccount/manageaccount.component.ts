@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { UserType } from 'src/app/models/usertype';
 import { College } from 'src/app/models/college';
 import { Branch } from 'src/app/models/branch';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 import { UploadFileService } from 'src/app/services/file/file.service';
 import { ExcelFile } from 'src/app/models/files';
 import * as XLSX from 'ts-xlsx';
@@ -29,7 +30,7 @@ export class ManageaccountComponent implements OnInit {
   arrayBuffer: any;
   studentsData: File;
 
-
+data = [];
   constructor(
     private router: Router,
     private educationservice: NotificationsService,
@@ -138,7 +139,21 @@ export class ManageaccountComponent implements OnInit {
     this.router.navigateByUrl('/manageaccount');
     window.location.reload();
   }
+  downloadExcel() {
+    var options = {
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true,
+      showTitle: true,
+      title: 'Student Excel Format',
+      useBom: true,
+      noDownload: false,
+      headers: ["Id", "user_type_id", "college_id",	"email",	"password",	"contact_number","sms_notification_active",	"email_notification_active","user_image",	"branch_id"]
+    };
 
+    new ngxCsv(this.data, 'StudentData', options);
+  }
   // changePassword() { 
   //   var id = localStorage.getItem('currentUser');
   //   this.file.uid = id;

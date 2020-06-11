@@ -13,7 +13,7 @@ import { EditjobpostdetailsComponent } from '../../admin-components/editjobpostd
 
 
 export const AdminLayoutRoutes: Routes = [
- //   { path: 'admin/dashboard',    component: AdminDashboardComponent },
+    { path: 'admin/dashboard',    component: AdminDashboardComponent },
     { path: 'admin/placements',   component: AdminPlacementsComponent },
     { path: 'admin/internships',  component: AdminInternshipsComponent },
     { path: 'admin/competitions', component: AdminCompetitionsComponent },
